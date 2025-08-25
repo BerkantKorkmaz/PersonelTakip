@@ -11,7 +11,8 @@ namespace WFAPersonelTakibi.Models
     {
         public Employee()
         {
-            this.ID = new Guid();
+            // Assign a unique identifier on creation
+            this.ID = Guid.NewGuid();
         }
 
         public Guid ID { get; set; }
@@ -29,14 +30,18 @@ namespace WFAPersonelTakibi.Models
             Required
         ]
         public DateTime BirthDate { get; set; }
-        public string EMail { get; set; }
+        [
+            Required,
+            EmailAddress,
+            MaxLength(100)
+        ]
+        public string Email { get; set; }
         [
             Required
         ]
         public Gender Gender { get; set; }
         [
-            Required,
-           
+            Required
         ]
         public Department Department { get; set; }
         [
