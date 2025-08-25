@@ -29,13 +29,16 @@ namespace WFAPersonelTakibi.Models
             Required
         ]
         public DateTime BirthDate { get; set; }
+        [
+            Requried
+        ]
         public string EMail { get; set; }
         [
             Required
         ]
         public Gender Gender { get; set; }
         [
-            Required,
+            Required
            
         ]
         public Department Department { get; set; }
